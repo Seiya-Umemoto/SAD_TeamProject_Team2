@@ -40,4 +40,7 @@ public class Book
     public String getAuthor(){
         return this.author;
     }
+    public int getCatalogueNumber() {
+        return this.catalogueNumber;
+    }
 }

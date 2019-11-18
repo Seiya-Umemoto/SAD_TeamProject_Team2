@@ -37,8 +37,8 @@ public class Library
     public void displayBooksForLoan() {
         Iterator it = books.iterator();
         while(it.hasNext()) {
-            if(((Book)it).checkIfAvailable)
-                System.out.println();
+            if(((Book)it).checkIfAvailable() == true)
+                System.out.println(((Book)it).toString());
         }
     }
 
@@ -51,8 +51,24 @@ public class Library
         }
     }
 
-    public void lendOneBook() {
-
+    public void lendOneBook(String name, int catalogueNumber) {
+        Borrower borrower = null;
+        Book book = null;
+        Loan newLoan = null;
+        Iterator itborrowers = borrowers.iterator();
+        while(itborrowers.hasNext()) {
+            if(((Borrower)itborrowers).getName().equals(name))
+                borrower = (Borrower)itborrowers; break;
+        }
+        Iterator itbooks = books.iterator();
+        while(itbooks.hasNext()) {
+            if(((Book)itbooks).getCatalogueNumber() == catalogueNumber)
+                book = (Book)itbooks; break;
+        }
+        if((borrower.checkIfEligible()) && (book.checkIfAvailable()))
+            newLoan = new Loan();
+            borrower.registerLoans(newLoan);
+            book.registerLoan(newLoan);
     }
 
     public void returnOneBook() {
