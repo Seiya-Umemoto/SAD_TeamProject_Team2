@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.TreeSet;
+import java.util.*;
 /**
  * Write a description of class Library here.
  *
@@ -11,13 +10,18 @@ public class Library
     private String name;
     private TreeSet<Book> books;
     private HashSet<Borrower> borrowers;
-
     public Library(String name) {
         this.name = name;
     }
 
     public void registerOneBorrower(String name) {
-
+        Iterator it = borrowers.iterator();
+        while(it.hasNext() == true) {
+            if(((Borrower)it).getName().equals(name))
+                System.out.println("Duplicate Error.");
+                return;
+        }
+        borrowers.add(new Borrower(name));
     }
 
     public void registerOneBook(String title, String author) {
