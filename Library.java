@@ -55,7 +55,19 @@ public class Library
 
     }
 
-    public void returnOneBook() {
-
+    public void returnOneBook(String name, int catalogueNumber) {
+        Iterator itBorr = borrowers.iterator();
+        while(itBorr.hasNext()) {
+            if(((Borrower)itBorr).getName().equals(name))
+                break;
+        }
+        Iterator itBook = books.iterator();
+        while(itBook.hasNext()){
+            if (((Book)itBook).getCatalogueNumber() == catalogueNumber){
+                break;
+            }
+        }
+        Loan loan = ((Book)itBook).deleteLoan();
+        ((Borrower)itBorr).deleteLoan(loan);
     }
 }
