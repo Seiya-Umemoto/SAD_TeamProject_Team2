@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Iterator;
 /**
  * Write a description of class Borrower here.
  *
@@ -7,21 +8,36 @@ import java.util.LinkedList;
  */
 public class Borrower
 {
-    	private String name;
-	private LinkedList<Loan> loans;
-	public Borrower(String name) {
-		
-	}
-	public boolean checkIfEligible() {
-		return true;
-	}
-	public void registerLoans(Loan loan) {
-		
-	}
-	public Loan findLoan(Loan loan) {
-		return new Loan();
-	}
-	public void deleteLoan(Loan loan) {
-		
-	}
+    private String name;
+    private LinkedList<Loan> loans;
+    public Borrower(String name) {
+        this.name = name;
+    }
+
+    public boolean checkIfEligible() {
+        if(loans.size() <= 10)
+            return true;
+        else
+            return false;
+    }
+
+    public void registerLoans(Loan loan) {
+        loans.add(loan);
+    }
+
+    // public Loan findLoan(Loan loan) {
+        // Iterator it = loans.iterator();
+        // while(it.hasNext()){
+            // if(it.equals(loan))
+                // break;
+        // }
+        // return loan
+    // }
+
+    public void deleteLoan(Loan loan) {
+        loans.remove(loan);
+    }
+    public String getName(){
+        return this.name;
+    }
 }
