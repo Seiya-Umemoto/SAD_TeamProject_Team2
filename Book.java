@@ -19,7 +19,7 @@ public class Book
     public String toString() {
         return "제목: " + this.title +", 작가: " + this.author + ", 분류 번호: " + this.catalogueNumber;
     }
-    public boolean checkifAvailable() {
+    public boolean checkIfAvailable() {
         if(loan == null)
             return true;
         else
