@@ -43,7 +43,12 @@ public class Library
     }
 
     public void displayBooksOnLoan() {
-
+        Iterator it = books.iterator();
+        while(it.hasNext()){
+            if (((Book)it).checkIfAvailable() == false){
+                System.out.println(((Book)it).toString());
+            }
+        }
     }
 
     public void lendOneBook() {
