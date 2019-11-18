@@ -1,33 +1,13 @@
-
+import 
 /**
- * Write a description of class Library here.
+ * 6개 유스케이스를 구현하는 도서관 클래스
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (2018315056 우메모토 세이야,)
+ * @version (2019/11/18)
  */
 public class Library
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Library
-     */
-    public Library()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    private String name;
+    private Book<TreeSet> books;
+    
 }
