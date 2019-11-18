@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.TreeSet;
+import java.util.Iterator;
+import java.util.HashSet;
 /**
  * Library Class where 6 usecases are implemented
  *
@@ -9,44 +11,55 @@ public class Library
 {
     private String name;
     private int lastCatalogueNumber = 0;
-    private TreeSet<Book> books;
-    private HashSet<Borrower> borrowers;
+    private TreeSet<Book> books = new TreeSet<Book>();
+    private HashSet<Borrower> borrowers = new HashSet<Borrower>();
     public Library(String name) {
         this.name = name;
     }
 
     public void registerOneBorrower(String name) {
+        Borrower borrower;
         Iterator it = borrowers.iterator();
         while(it.hasNext()) {
-            if(((Borrower)it).getName().equals(name))
+            borrower = (Borrower)it.next();
+            if(borrower.getName().equals(name))
                 System.out.println("Duplicate Error."); return;
         }
         borrowers.add(new Borrower(name));
+        System.out.println(borrowers);
     }
 
     public void registerOneBook(String title, String author) {
+        Book book;
         Iterator it = books.iterator();
         while(it.hasNext()) {
-            if((((Book)it).getTitle().equals(title)) && (((Book)it).getAuthor().equals(title)))
+            book = (Book)it.next();
+            if((book.getTitle().equals(title)) && (book.getAuthor().equals(author)))
                 System.out.println("Duplicate Error."); return;
         }
-        books.add(new Book(title, author, lastCatalogueNumber));
-        lastCatalogueNumber += 1;        
+        Book a = new Book(title, author, lastCatalogueNumber);
+        books.add(a);
+        lastCatalogueNumber += 1;
+        System.out.println(books);
     }
 
     public void displayBooksForLoan() {
+        Book book;
         Iterator it = books.iterator();
         while(it.hasNext()) {
-            if(((Book)it).checkIfAvailable() == true)
-                System.out.println(((Book)it).toString());
+            book = (Book)it.next();
+            if(book.checkIfAvailable() == true)
+                System.out.println(book.toString());
         }
     }
 
     public void displayBooksOnLoan() {
+        Book book;
         Iterator it = books.iterator();
         while(it.hasNext()){
-            if (((Book)it).checkIfAvailable() == false){
-                System.out.println(((Book)it).toString());
+            book = (Book)it.next();
+            if (book.checkIfAvailable() == false){
+                System.out.println(book.toString());
             }
         }
     }
@@ -57,13 +70,15 @@ public class Library
         Loan newLoan = null;
         Iterator itborrowers = borrowers.iterator();
         while(itborrowers.hasNext()) {
-            if(((Borrower)itborrowers).getName().equals(name))
-                borrower = (Borrower)itborrowers; break;
+            borrower = (Borrower)itborrowers.next();
+            if(borrower.getName().equals(name))
+                break;
         }
         Iterator itbooks = books.iterator();
         while(itbooks.hasNext()) {
+            book = (Book)itbooks.next();
             if(((Book)itbooks).getCatalogueNumber() == catalogueNumber)
-                book = (Book)itbooks; break;
+                break;
         }
         if((borrower.checkIfEligible()) && (book.checkIfAvailable()))
             newLoan = new Loan();
@@ -72,18 +87,22 @@ public class Library
     }
 
     public void returnOneBook(String name, int catalogueNumber) {
+        Borrower borrower = null;
+        Book book = null;
         Iterator itBorr = borrowers.iterator();
         while(itBorr.hasNext()) {
-            if(((Borrower)itBorr).getName().equals(name))
+            borrower = (Borrower)itBorr.next();
+            if(borrower.getName().equals(name))
                 break;
         }
         Iterator itBook = books.iterator();
         while(itBook.hasNext()){
-            if (((Book)itBook).getCatalogueNumber() == catalogueNumber){
+            book = (Book)itBook.next();
+            if (book.getCatalogueNumber() == catalogueNumber){
                 break;
             }
         }
-        Loan loan = ((Book)itBook).deleteLoan();
-        ((Borrower)itBorr).deleteLoan(loan);
+        Loan loan = book.deleteLoan();
+        borrower.deleteLoan(loan);
     }
 }
