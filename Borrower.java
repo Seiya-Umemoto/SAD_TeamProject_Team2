@@ -1,4 +1,4 @@
-
+import java.util.LinkedList;
 /**
  * Write a description of class Borrower here.
  *
@@ -7,27 +7,21 @@
  */
 public class Borrower
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Borrower
-     */
-    public Borrower()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    	private String name;
+	private LinkedList<Loan> loans;
+	public Borrower(String name) {
+		
+	}
+	public boolean checkIfEligible() {
+		return true;
+	}
+	public void registerLoans(Loan loan) {
+		
+	}
+	public Loan findLoan(Loan loan) {
+		return new Loan();
+	}
+	public void deleteLoan(Loan loan) {
+		
+	}
 }

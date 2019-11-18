@@ -1,4 +1,5 @@
-
+import java.util.HashSet;
+import java.util.TreeSet;
 /**
  * Write a description of class Library here.
  *
@@ -7,27 +8,30 @@
  */
 public class Library
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Library
-     */
-    public Library()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    private String name;
+	private TreeSet<Book> books;
+	private HashSet<Borrower> borrowers;
+	
+	public Library(String name) {
+		this.name = name;
+	}
+	
+	public void registerOneBorrower(String name) {
+		
+	}
+	public void registerOneBook(String title, String author) {
+		
+	}
+	public void displayBooksForLoan() {
+		
+	}
+	public void displayBooksOnLoan() {
+		
+	}
+	public void lendOneBook() {
+		
+	}
+	public void returnOneBook() {
+		
+	}
 }
