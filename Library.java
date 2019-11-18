@@ -8,6 +8,7 @@ import java.util.*;
 public class Library
 {
     private String name;
+    private int lastCNumber = 0;
     private TreeSet<Book> books;
     private HashSet<Borrower> borrowers;
     public Library(String name) {
@@ -18,14 +19,19 @@ public class Library
         Iterator it = borrowers.iterator();
         while(it.hasNext() == true) {
             if(((Borrower)it).getName().equals(name))
-                System.out.println("Duplicate Error.");
-                return;
+                System.out.println("Duplicate Error."); return;
         }
         borrowers.add(new Borrower(name));
     }
 
     public void registerOneBook(String title, String author) {
-
+        Iterator it = books.iterator();
+        while(it.hasNext() == true) {
+            if((((Book)it).getTitle().equals(title)) && (((Book)it).getAuthor().equals(title)))
+                System.out.println("Duplicate Error."); return;
+        }
+        books.add(new Book(title, author, lastCNumber));
+        lastCNumber += 1;        
     }
 
     public void displayBooksForLoan() {
