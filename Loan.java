@@ -2,8 +2,8 @@ import java.time.*;
 /**
  * Write a description of class Loan here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (2018315056 우메모토 세이야)
+ * @version (2019/11/18)
  */
 public class Loan
 {
