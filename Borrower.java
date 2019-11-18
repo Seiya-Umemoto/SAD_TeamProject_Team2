@@ -1,9 +1,9 @@
 import java.util.LinkedList;
 import java.util.Iterator;
 /**
- * Write a description of class Borrower here.
+ * Borrower class where borrowers' information is stored
  *
- * @author (2018315056 우메모토 세이야)
+ * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카)
  * @version (2019/11/18)
  */
 public class Borrower
