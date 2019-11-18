@@ -34,4 +34,10 @@ public class Book
         this.loan = null;
         return tmp_loan;
     }
+    public String getTitle(){
+        return this.title;
+    }
+    public String getAuthor(){
+        return this.author;
+    }
 }
