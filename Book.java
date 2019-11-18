@@ -16,17 +16,22 @@ public class Book
         this.author = author;
         this.catalogueNumber = catalogueNumber;
     }
-    @Override
     public String toString() {
-
+        return "제목: " + this.title +", 작가: " + this.author + ", 분류 번호: " + this.catalogueNumber;
     }
     public boolean checkifAvailable() {
-        
+        if(loan == null)
+            return true;
+        else
+            return false;
     }
     public void registerLoan(Loan loan) {
-        
+        this.loan = loan;
     }
     public Loan deleteLoan() {
-        
+        Loan tmp_loan;
+        tmp_loan = this.loan;
+        this.loan = null;
+        return tmp_loan;
     }
 }
