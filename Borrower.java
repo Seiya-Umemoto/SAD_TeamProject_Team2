@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class Borrower
 {
     private String name;
-    private LinkedList<Loan> loans = new LinkedList<Loan>();
+    private LinkedList<Loan> loans; //attachedLoans
     public Borrower(String name) {
         this.name = name;
         loans = new LinkedList<Loan>();
@@ -30,7 +30,7 @@ public class Borrower
         loans.remove(loan);
     }
     public String toString(){
-        return "이름: "+this.name;
+        return "Name: "+this.name;
     }
     public String getName(){
         return this.name;

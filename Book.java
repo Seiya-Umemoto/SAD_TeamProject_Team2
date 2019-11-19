@@ -17,8 +17,8 @@ public class Book implements Comparable<Book>
         this.catalogueNumber = catalogueNumber;
         loan = null;
     }
-    public String toString() {
-        return "제목: " + this.title +", 작가: " + this.author + ", 분류 번호: " + this.catalogueNumber;
+    public String toString() { // 줄바꿈
+        return "Title: " + this.title +", Author: " + this.author + ", Catalogue Number: " + this.catalogueNumber;
     }
     public boolean checkIfAvailable() {
         if(loan == null)
@@ -30,7 +30,7 @@ public class Book implements Comparable<Book>
         this.loan = loan;
     }
     public Loan deleteLoan() {
-        Loan tmp_loan;
+        Loan tmp_loan; //이름 바꿀까?
         tmp_loan = this.loan;
         this.loan = null;
         return tmp_loan;

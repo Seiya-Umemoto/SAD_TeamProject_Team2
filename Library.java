@@ -9,15 +9,15 @@ import java.util.HashSet;
  */
 public class Library
 {
-    private String name;
+    private String name; //name of this Library object
     private int lastCatalogueNumber;
-    private TreeSet<Book> books;
-    private HashSet<Borrower> borrowers;
+    private TreeSet<Book> books; //registeredBooks
+    private HashSet<Borrower> borrowers; //registeredBorrowers // 휜색 마름모
     public Library(String name) {
         this.name = name;
         lastCatalogueNumber = 0;
-        books = new TreeSet<Book>();
-        borrowers = new HashSet<Borrower>();
+        books = new TreeSet<Book>(); //registeredBooks
+        borrowers = new HashSet<Borrower>(); //registeredBorrowers
     }
 
     public void registerOneBorrower(String name) {
@@ -30,7 +30,7 @@ public class Library
         }
         Borrower bor = new Borrower(name);
         System.out.println(bor);
-        borrowers.add(bor);
+        borrowers.add(bor); //registered
     }
 
     public void registerOneBook(String title, String author) {
@@ -84,11 +84,15 @@ public class Library
             if(book.getCatalogueNumber() == catalogueNumber)
                 break;
         }
-        if((borrower.checkIfEligible()) && (book.checkIfAvailable()))
+        if((borrower.checkIfEligible()) && (book.checkIfAvailable())) {
             newLoan = new Loan();
             borrower.registerLoans(newLoan);
             book.registerLoan(newLoan);
-    }
+        } else if(borrower.checkIfEligible()) {
+            System.out.println(borrower.toString() + "- can't borrow ");
+        } else
+            System.out.println(book.toString() + "- can't be borrowed");
+    } //try and catch?
 
     public void returnOneBook(String name, int catalogueNumber) {
         Borrower borrower = null;
@@ -107,9 +111,9 @@ public class Library
             }
         }
         Loan loan = book.deleteLoan();
-        borrower.deleteLoan(loan);
+        borrower.deleteLoan(loan); //loan과 관련이 있는가?
     }
     public String toString(){
-        return "도서관 이름: "+this.name;
+        return "Library Name: "+this.name;
     }
 }
