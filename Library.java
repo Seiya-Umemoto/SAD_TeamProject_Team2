@@ -25,8 +25,9 @@ public class Library
             if(borrower.getName().equals(name)){
                 System.out.println("Duplicate Error."); return;}
         }
-        System.out.println(1);
-        borrowers.add(new Borrower(name));
+        Borrower bor = new Borrower(name);
+        System.out.println(bor);
+        borrowers.add(bor);
     }
 
     public void registerOneBook(String title, String author) {
@@ -37,10 +38,10 @@ public class Library
             if((book.getTitle().equals(title)) && (book.getAuthor().equals(author))) {
                 System.out.println("Duplicate Error."); return;}
         }
-        Book a = new Book(title, author, lastCatalogueNumber);
-        books.add(a);
+        Book bk = new Book(title, author, lastCatalogueNumber);
+        System.out.println(bk);
+        books.add(bk);
         lastCatalogueNumber += 1;
-        System.out.println(book);
     }
 
     public void displayBooksForLoan() {
