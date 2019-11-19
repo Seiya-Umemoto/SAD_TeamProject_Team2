@@ -10,11 +10,14 @@ import java.util.HashSet;
 public class Library
 {
     private String name;
-    private int lastCatalogueNumber = 0;
-    private TreeSet<Book> books = new TreeSet<Book>();
-    private HashSet<Borrower> borrowers = new HashSet<Borrower>();
+    private int lastCatalogueNumber;
+    private TreeSet<Book> books;
+    private HashSet<Borrower> borrowers;
     public Library(String name) {
         this.name = name;
+        lastCatalogueNumber = 0;
+        books = new TreeSet<Book>();
+        borrowers = new HashSet<Borrower>();
     }
 
     public void registerOneBorrower(String name) {
@@ -22,8 +25,10 @@ public class Library
         Iterator it = borrowers.iterator();
         while(it.hasNext()) {
             borrower = (Borrower)it.next();
-            if(borrower.getName().equals(name))
-                System.out.println("Duplicate Error."); return;
+            if(borrower.getName().equals(name)){
+                System.out.println("Duplicate Error.");
+                return;
+            }
         }
         borrowers.add(new Borrower(name));
         System.out.println(borrowers);
@@ -104,5 +109,8 @@ public class Library
         }
         Loan loan = book.deleteLoan();
         borrower.deleteLoan(loan);
+    }
+    public String toString(){
+        return "도서관 이름: "+this.name;
     }
 }

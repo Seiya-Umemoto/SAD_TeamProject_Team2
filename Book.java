@@ -10,11 +10,12 @@ public class Book implements Comparable<Book>
     private String title;
     private String author;
     private int catalogueNumber;
-    private Loan loan = null;
+    private Loan loan;
     public Book(String title, String author, int catalogueNumber) {
         this.title = title;
         this.author = author;
         this.catalogueNumber = catalogueNumber;
+        loan = null;
     }
     public String toString() {
         return "제목: " + this.title +", 작가: " + this.author + ", 분류 번호: " + this.catalogueNumber;
@@ -34,6 +35,14 @@ public class Book implements Comparable<Book>
         this.loan = null;
         return tmp_loan;
     }
+    public int compareTo(Book book) {
+        if (book.getCatalogueNumber() == this.catalogueNumber)
+            return 0;
+        else if(book.getCatalogueNumber() < this.catalogueNumber)
+            return -1;
+        else
+            return 1;
+    }
     public String getTitle(){
         return this.title;
     }
@@ -42,13 +51,5 @@ public class Book implements Comparable<Book>
     }
     public int getCatalogueNumber() {
         return this.catalogueNumber;
-    }
-    public int compareTo(Book book) {
-        if (book.getCatalogueNumber() == this.catalogueNumber)
-            return 0;
-        else if(book.getCatalogueNumber() < this.catalogueNumber)
-            return -1;
-        else
-            return 1;
     }
 }

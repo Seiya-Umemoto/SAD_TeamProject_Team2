@@ -12,6 +12,7 @@ public class Borrower
     private LinkedList<Loan> loans;
     public Borrower(String name) {
         this.name = name;
+        loans = new LinkedList<Loan>();
     }
 
     public boolean checkIfEligible() {
@@ -24,18 +25,12 @@ public class Borrower
     public void registerLoans(Loan loan) {
         loans.add(loan);
     }
-
-    // public Loan findLoan(Loan loan) {
-        // Iterator it = loans.iterator();
-        // while(it.hasNext()){
-            // if(it.equals(loan))
-                // break;
-        // }
-        // return loan
-    // }
-
+    
     public void deleteLoan(Loan loan) {
         loans.remove(loan);
+    }
+    public String toString(){
+        return "이름: "+this.name;
     }
     public String getName(){
         return this.name;
