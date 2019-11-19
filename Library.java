@@ -21,31 +21,30 @@ public class Library
     }
 
     public void registerOneBorrower(String name) {
-        Borrower borrower;
+        Borrower borrower = null;
         Iterator it = borrowers.iterator();
         while(it.hasNext()) {
             borrower = (Borrower)it.next();
             if(borrower.getName().equals(name)){
-                System.out.println("Duplicate Error.");
-                return;
-            }
+                System.out.println("Duplicate Error."); return;}
         }
-        borrowers.add(new Borrower(name));
-        System.out.println(borrowers);
+        Borrower bor = new Borrower(name);
+        System.out.println(bor);
+        borrowers.add(bor);
     }
 
     public void registerOneBook(String title, String author) {
-        Book book;
+        Book book = null;
         Iterator it = books.iterator();
         while(it.hasNext()) {
             book = (Book)it.next();
-            if((book.getTitle().equals(title)) && (book.getAuthor().equals(author)))
-                System.out.println("Duplicate Error."); return;
+            if((book.getTitle().equals(title)) && (book.getAuthor().equals(author))) {
+                System.out.println("Duplicate Error."); return;}
         }
-        Book a = new Book(title, author, lastCatalogueNumber);
-        books.add(a);
+        Book bk = new Book(title, author, lastCatalogueNumber);
+        System.out.println(bk);
+        books.add(bk);
         lastCatalogueNumber += 1;
-        System.out.println(books);
     }
 
     public void displayBooksForLoan() {
@@ -82,7 +81,7 @@ public class Library
         Iterator itbooks = books.iterator();
         while(itbooks.hasNext()) {
             book = (Book)itbooks.next();
-            if(((Book)itbooks).getCatalogueNumber() == catalogueNumber)
+            if(book.getCatalogueNumber() == catalogueNumber)
                 break;
         }
         if((borrower.checkIfEligible()) && (book.checkIfAvailable()))

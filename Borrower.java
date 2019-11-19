@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class Borrower
 {
     private String name;
-    private LinkedList<Loan> loans;
+    private LinkedList<Loan> loans = new LinkedList<Loan>();
     public Borrower(String name) {
         this.name = name;
         loans = new LinkedList<Loan>();
