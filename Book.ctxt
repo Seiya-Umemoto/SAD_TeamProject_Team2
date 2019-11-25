@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Book
+comment0.text=\r\n\ Book\ class\ where\ books'\ information\ is\ stored\r\n\r\n\ @author\ (2018315056\ \uC6B0\uBA54\uBAA8\uD1A0\ \uC138\uC774\uC57C,\ 2018315036\ \uC591\uC720\uC11D,\ 2018315030\ \uC774\uAC00\uC601,\ 2018315053\ \uD14C\uB77C\uC624\uCE74\ \uC720\uC774\uCE74)\r\n\ @version\ (2019/11/18)\r\n
+comment1.params=title\ author\ catalogueNumber
+comment1.target=Book(java.lang.String,\ java.lang.String,\ int)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=
+comment3.target=boolean\ checkIfAvailable()
+comment4.params=loan
+comment4.target=void\ registerLoan(Loan)
+comment5.params=
+comment5.target=Loan\ deleteLoan()
+comment6.params=book
+comment6.target=int\ compareTo(Book)
+comment7.params=
+comment7.target=java.lang.String\ getTitle()
+comment8.params=
+comment8.target=java.lang.String\ getAuthor()
+comment9.params=
+comment9.target=int\ getCatalogueNumber()
+numComments=10
