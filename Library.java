@@ -8,7 +8,7 @@ import java.util.HashSet;
  * @version (2019/11/18)
  */
 public class Library
-{
+{ //변수 이름을 변경하는 것은 어떨까? 일단 다이어그램대로 구현했음.
     private String name; //name of this Library object
     private int lastCatalogueNumber;
     private TreeSet<Book> books; //registeredBooks
