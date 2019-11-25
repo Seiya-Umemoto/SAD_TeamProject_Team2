@@ -22,9 +22,9 @@ public class Library
 
     public void registerOneBorrower(String name) {
         Borrower borrower = null;
-        Iterator it = borrowers.iterator();
+        Iterator<Borrower> it = borrowers.iterator();
         while(it.hasNext()) {
-            borrower = (Borrower)it.next();
+            borrower = it.next();
             if(borrower.getName().equals(name)){
                 System.out.println("Duplicate Error."); return;}
         }
@@ -35,9 +35,9 @@ public class Library
 
     public void registerOneBook(String title, String author) {
         Book book = null;
-        Iterator it = books.iterator();
+        Iterator<Book> it = books.iterator();
         while(it.hasNext()) {
-            book = (Book)it.next();
+            book = it.next();
             if((book.getTitle().equals(title)) && (book.getAuthor().equals(author))) {
                 System.out.println("Duplicate Error."); return;}
         }
@@ -49,9 +49,9 @@ public class Library
 
     public void displayBooksForLoan() {
         Book book;
-        Iterator it = books.iterator();
+        Iterator<Book> it = books.iterator();
         while(it.hasNext()) {
-            book = (Book)it.next();
+            book = it.next();
             if(book.checkIfAvailable() == true)
                 System.out.println(book.toString());
         }
@@ -59,9 +59,9 @@ public class Library
 
     public void displayBooksOnLoan() {
         Book book;
-        Iterator it = books.iterator();
+        Iterator<Book> it = books.iterator();
         while(it.hasNext()){
-            book = (Book)it.next();
+            book = it.next();
             if (book.checkIfAvailable() == false){
                 System.out.println(book.toString());
             }
@@ -72,15 +72,15 @@ public class Library
         Borrower borrower = null;
         Book book = null;
         Loan newLoan = null;
-        Iterator itborrowers = borrowers.iterator();
+        Iterator<Borrower> itborrowers = borrowers.iterator();
         while(itborrowers.hasNext()) {
-            borrower = (Borrower)itborrowers.next();
+            borrower = itborrowers.next();
             if(borrower.getName().equals(name))
                 break;
         }
-        Iterator itbooks = books.iterator();
+        Iterator<Book> itbooks = books.iterator();
         while(itbooks.hasNext()) {
-            book = (Book)itbooks.next();
+            book = itbooks.next();
             if(book.getCatalogueNumber() == catalogueNumber)
                 break;
         }
@@ -97,15 +97,15 @@ public class Library
     public void returnOneBook(String name, int catalogueNumber) {
         Borrower borrower = null;
         Book book = null;
-        Iterator itBorr = borrowers.iterator();
+        Iterator<Borrower> itBorr = borrowers.iterator();
         while(itBorr.hasNext()) {
-            borrower = (Borrower)itBorr.next();
+            borrower = itBorr.next();
             if(borrower.getName().equals(name))
                 break;
         }
-        Iterator itBook = books.iterator();
+        Iterator<Book> itBook = books.iterator();
         while(itBook.hasNext()){
-            book = (Book)itBook.next();
+            book = itBook.next();
             if (book.getCatalogueNumber() == catalogueNumber){
                 break;
             }
