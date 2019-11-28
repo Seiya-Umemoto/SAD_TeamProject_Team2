@@ -12,17 +12,17 @@ public class Library
     private String name; //name of this Library object
     private int lastCatalogueNumber;
     private TreeSet<Book> registeredBooks; //registeredBooks
-    private HashSet<Borrower> registeredborrowers; //registeredBorrowers // 휜색 마름모
+    private HashSet<Borrower> registeredBorrowers; //registeredBorrowers // 휜색 마름모
     public Library(String name) {
         this.name = name;
         lastCatalogueNumber = 0;
         registeredBooks = new TreeSet<Book>(); //registeredBooks
-        registeredborrowers = new HashSet<Borrower>(); //registeredBorrowers
+        registeredBorrowers = new HashSet<Borrower>(); //registeredBorrowers
     }
 
     public void registerOneBorrower(String name) {
         Borrower borrower = null;
-        Iterator<Borrower> it = registeredborrowers.iterator();
+        Iterator<Borrower> it = registeredBorrowers.iterator();
         while(it.hasNext()) {
             borrower = it.next();
             if(borrower.getName().equals(name)){
@@ -30,7 +30,7 @@ public class Library
         }
         Borrower bor = new Borrower(name);
         System.out.println(bor);
-        registeredborrowers.add(bor); //registered
+        registeredBorrowers.add(bor); //registered
     }
 
     public void registerOneBook(String title, String author) {
@@ -72,7 +72,7 @@ public class Library
         Borrower borrower = null;
         Book book = null;
         Loan newLoan = null;
-        Iterator<Borrower> itborrowers = registeredborrowers.iterator();
+        Iterator<Borrower> itborrowers = registeredBorrowers.iterator();
         while(itborrowers.hasNext()) {
             borrower = itborrowers.next();
             if(borrower.getName().equals(name))
@@ -97,7 +97,7 @@ public class Library
     public void returnOneBook(String name, int catalogueNumber) {
         Borrower borrower = null;
         Book book = null;
-        Iterator<Borrower> itBorr = registeredborrowers.iterator();
+        Iterator<Borrower> itBorr = registeredBorrowers.iterator();
         while(itBorr.hasNext()) {
             borrower = itBorr.next();
             if(borrower.getName().equals(name))
