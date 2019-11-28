@@ -92,7 +92,7 @@ public class Library
             System.out.println(borrower.toString() + "- can't borrow ");
         } else
             System.out.println(book.toString() + "- can't be borrowed");
-    } //try and catch?
+    } //try and catch? //try nd catch는 여기서 구현하는 건 어려울 거 같은데
 
     public void returnOneBook(String name, int catalogueNumber) {
         Borrower borrower = null;
