@@ -9,25 +9,25 @@ import java.util.Iterator;
 public class Borrower
 {
     private String name;
-    private LinkedList<Loan> loans; //attachedLoans
+    private LinkedList<Loan> attachedLoans;
     public Borrower(String name) {
         this.name = name;
-        loans = new LinkedList<Loan>();
+        attachedLoans = new LinkedList<Loan>();
     }
 
     public boolean checkIfEligible() {
-        if(loans.size() <= 10)
+        if(attachedLoans.size() <= 10)
             return true;
         else
             return false;
     }
 
     public void registerLoans(Loan loan) {
-        loans.add(loan);
+        attachedLoans.add(loan);
     }
     
     public void deleteLoan(Loan loan) {
-        loans.remove(loan);
+        attachedLoans.remove(loan);
     }
     public String toString(){
         return "Name: "+this.name;

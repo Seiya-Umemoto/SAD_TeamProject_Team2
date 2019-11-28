@@ -10,29 +10,29 @@ public class Book implements Comparable<Book>
     private String title;
     private String author;
     private int catalogueNumber;
-    private Loan loan;
+    private Loan attachedLoan;
     public Book(String title, String author, int catalogueNumber) {
         this.title = title;
         this.author = author;
         this.catalogueNumber = catalogueNumber;
-        loan = null;
+        attachedLoan = null;
     }
-    public String toString() { // 줄바꿈
+    public String toString() { 
         return "Title: " + this.title +", Author: " + this.author + ", Catalogue Number: " + this.catalogueNumber;
     }
     public boolean checkIfAvailable() {
-        if(loan == null)
+        if(attachedLoan == null)
             return true;
         else
             return false;
     }
     public void registerLoan(Loan loan) {
-        this.loan = loan;
+        this.attachedLoan = loan;
     }
     public Loan deleteLoan() {
         Loan tempLoan;
-        tempLoan = this.loan;
-        this.loan = null;
+        tempLoan = this.attachedLoan;
+        this.attachedLoan = null;
         return tempLoan;
     }
     public int compareTo(Book book) {

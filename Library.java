@@ -92,7 +92,7 @@ public class Library
             System.out.println(eachBorrower.toString() + "- can't borrow ");
         } else
             System.out.println(eachBook.toString() + "- can't be borrowed");
-    } //try and catch? //try nd catch는 여기서 구현하는 건 어려울 거 같은데
+    }
 
     public void returnOneBook(String name, int catalogueNumber) {
         Borrower eachBorrower = null;
@@ -111,7 +111,7 @@ public class Library
             }
         }
         Loan loan = eachBook.deleteLoan();
-        eachBorrower.deleteLoan(loan); //loan과 관련이 있는가?
+        eachBorrower.deleteLoan(loan);
     }
 
     public String toString(){
