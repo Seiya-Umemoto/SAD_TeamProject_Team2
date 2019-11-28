@@ -5,7 +5,7 @@ import java.util.HashSet;
  * Library Class where 6 usecases are implemented
  *
  * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카)
- * @version (2019/11/18)
+ * @version (2019/11/28)
  */
 public class Library
 { //변수 이름을 변경하는 것은 어떨까? 일단 다이어그램대로 구현했음.
