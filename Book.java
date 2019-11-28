@@ -26,8 +26,8 @@ public class Book implements Comparable<Book>
         else
             return false;
     }
-    public void registerLoan(Loan loan) {
-        this.attachedLoan = loan;
+    public void registerLoan(Loan newLoan) {
+        attachedLoan = newLoan;
     }
     public Loan deleteLoan() {
         Loan tempLoan;

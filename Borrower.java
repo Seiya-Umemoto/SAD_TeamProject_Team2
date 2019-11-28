@@ -22,8 +22,8 @@ public class Borrower
             return false;
     }
 
-    public void registerLoans(Loan loan) {
-        attachedLoans.add(loan);
+    public void registerLoans(Loan newLoan) {
+        attachedLoans.add(newLoan);
     }
     
     public void deleteLoan(Loan loan) {
