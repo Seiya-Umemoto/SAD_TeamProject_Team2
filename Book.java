@@ -30,10 +30,10 @@ public class Book implements Comparable<Book>
         this.loan = loan;
     }
     public Loan deleteLoan() {
-        Loan tmp_loan; //이름 바꿀까?
-        tmp_loan = this.loan;
+        Loan tempLoan;
+        tempLoan = this.loan;
         this.loan = null;
-        return tmp_loan;
+        return tempLoan;
     }
     public int compareTo(Book book) {
         if (book.getCatalogueNumber() == this.catalogueNumber)

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Library
-comment0.text=\r\n\ Library\ Class\ where\ 6\ usecases\ are\ implemented\r\n\r\n\ @author\ (2018315056\ \uC6B0\uBA54\uBAA8\uD1A0\ \uC138\uC774\uC57C,\ 2018315036\ \uC591\uC720\uC11D,\ 2018315030\ \uC774\uAC00\uC601,\ 2018315053\ \uD14C\uB77C\uC624\uCE74\ \uC720\uC774\uCE74)\r\n\ @version\ (2019/11/18)\r\n
+comment0.text=\r\n\ Library\ Class\ where\ 6\ usecases\ are\ implemented\r\n\r\n\ @author\ (2018315056\ \uC6B0\uBA54\uBAA8\uD1A0\ \uC138\uC774\uC57C,\ 2018315036\ \uC591\uC720\uC11D,\ 2018315030\ \uC774\uAC00\uC601,\ 2018315053\ \uD14C\uB77C\uC624\uCE74\ \uC720\uC774\uCE74)\r\n\ @version\ (2019/11/28)\r\n
 comment1.params=name
 comment1.target=Library(java.lang.String)
 comment2.params=name
