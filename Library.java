@@ -88,10 +88,7 @@ public class Library
             newLoan = new Loan();
             eachBorrower.registerLoans(newLoan);
             eachBook.registerLoan(newLoan);
-        } else if(eachBook.checkIfAvailable() == false)
-            System.out.println(eachBook.toString() + " - can't be borrowed");
-        else if(eachBorrower.checkIfEligible() == false)
-            System.out.println(eachBorrower.toString() + " - can't borrow");
+        } ;
     }
 
     public void returnOneBook(String name, int catalogueNumber) {
